@@ -1,7 +1,7 @@
 # vllm-upsunify
 Run vLLM on Upsun.com
 
-The below are recommended starting values, to build and run vLLM on [Upsun](https://upsun.com). They have been tested to produce a working vLLM installation, but modify as needed.
+The below are recommended starting values, to build and run vLLM on [Upsun.com](https://upsun.com). They have been tested to produce a working vLLM installation, but modify as needed.
 - Set Build memory to 5120MB
   - `upsun project:curl settings -X PATCH -d '{"build_resources": {"cpu": 4.0, "memory": 5120}}'`
   - https://docs.upsun.com/manage-resources/build-resources.html
