@@ -22,5 +22,5 @@ The below are recommended starting values, to build and run vLLM on [Upsun.com](
 You can use the `offline_batched_inference.py` script to do some test offline batched inferencing. The example code is from https://docs.vllm.ai/en/latest/getting_started/quickstart.html#offline-batched-inference
 
 Copy the test script to the **/tmp** directory in your Upsun environment, and then execute it with 
-`python offline_batched_inference.py`
+`HF_HOME='/mnt/hfcache' python offline_batched_inference.py `
 
