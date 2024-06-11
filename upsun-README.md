@@ -11,9 +11,9 @@ The below are recommended starting values, to build and run vLLM on Upsun. They 
 - Set Container profile to CPU=2, and Memory=6336 MB
   - Container profile is set to default to HIGHER_MEMORY in upsun/config.yaml
     - e.g. `container_profile: HIGHER_MEMORY`
-    - You can increase/decrease/change CPU, Memory, Container depending on your needs. Too little will likely result in OOM kills.
-    - https://docs.upsun.com/manage-resources/adjust-resources.html#adjust-a-container-profile
+  - You can increase/decrease/change CPU, Memory, Container depending on your needs. Too little will likely result in OOM kills.
+  - https://docs.upsun.com/manage-resources/adjust-resources.html#adjust-a-container-profile
 - Set a disk size for models downloaded by vLLM to 10240 MB
   - `upsun resources:set --size=vllmupsuntest:1`
-  - https://docs.upsun.com/get-started/here/set-resources.html
   - You may increase/decrease the disk, depending on how much space your models need
+  - https://docs.upsun.com/get-started/here/set-resources.html
