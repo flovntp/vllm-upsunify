@@ -9,7 +9,7 @@ The below are recommended starting values, to build and run vLLM on [Upsun.com](
   - `upsun push --resources-init=manual`
   - https://docs.upsun.com/manage-resources/resource-init.html
 - Set Container profile to CPU=2, and Memory=6336 MB
-  - Container profile is set to default to HIGHER_MEMORY in upsun/config.yaml
+  - Container profile is set to default to HIGHER_MEMORY in `.upsun/config.yaml`
     - e.g. `container_profile: HIGHER_MEMORY`
   - You can increase/decrease/change CPU, Memory, Container depending on your needs. Too little will likely result in OOM kills.
   - https://docs.upsun.com/manage-resources/adjust-resources.html#adjust-a-container-profile
