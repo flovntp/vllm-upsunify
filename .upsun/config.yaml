@@ -78,8 +78,9 @@ applications:
         # Build libkineto with cmake
         cd kineto/libkineto
         mkdir build && cd build
-        cmake ..
-        make
+        make install
+        
+        cd ../../..
 
         # Download the latest version of pip
         python3.11 -m pip install --upgrade pip
