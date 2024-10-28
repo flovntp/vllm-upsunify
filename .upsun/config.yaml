@@ -73,11 +73,19 @@ applications:
       build: |
         set -eu
 
+        # Check out repo and sub modules
+        git clone --recursive https://github.com/pytorch/kineto.git
+        # Build libkineto with cmake
+        cd kineto/libkineto
+        mkdir build && cd build
+        cmake ..
+        make
+
         # Download the latest version of pip
         python3.11 -m pip install --upgrade pip
 
         # Install pytorch: https://pytorch.org/get-started/locally/
-        pip3 install torch torchvision torchaudio torch-tb-profiler --index-url https://download.pytorch.org/whl/cpu
+        pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
         # Install vLLM: https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html
         # General instructions given on the site are at https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html
