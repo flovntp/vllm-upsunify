@@ -73,15 +73,6 @@ applications:
       build: |
         set -eu
 
-        # Check out repo and sub modules
-        git clone --recursive https://github.com/pytorch/kineto.git
-        # Build libkineto with cmake
-        cd kineto/libkineto
-        mkdir build && cd build
-        make install
-        
-        cd ../../..
-
         # Download the latest version of pip
         python3.11 -m pip install --upgrade pip
 
