@@ -74,17 +74,27 @@ applications:
         set -eu
 
         # Download the latest version of pip
-        python3.11 -m pip install --upgrade pip
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+        pip install cmake>=3.26 wheel packaging ninja "setuptools-scm>=8" numpy
+        pip install -v -r requirements-cpu.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
         # Install pytorch: https://pytorch.org/get-started/locally/
-        pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+        pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
         # Install vLLM: https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html
         # General instructions given on the site are at https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html
         #
         # I am going to explicitly reference pip3 and python3 below, though it probably won't make a difference
         pip3 install wheel packaging ninja setuptools>=49.4.0 numpy
-        pip3 install -v -r requirements-cpu.txt --extra-index-url https://download.pytorch.org/whl/cpu
+        
+      deploy: |  
         # Set environment variable
         VLLM_TARGET_DEVICE=cpu python3 setup.py install --prefix=$PLATFORM_APP_DIR/.global
-
+    
+    web:
+      commands:
+        start: "gunicorn -b unix:$SOCKET config.wsgi"
+      upstream:
+        socket_family: unix
