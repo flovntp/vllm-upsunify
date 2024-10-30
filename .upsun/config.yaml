@@ -86,7 +86,7 @@ applications:
         pip install wheel packaging ninja setuptools>=49.4.0 numpy
 
         # Install pytorch: https://pytorch.org/get-started/locally/
-        pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+        pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
         
       deploy: |  
         # Set environment variable
