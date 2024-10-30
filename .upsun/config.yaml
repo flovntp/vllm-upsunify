@@ -31,9 +31,9 @@ applications:
       '/.config':
           source: local
           source_path: 'config'
-      '/.global':
-        source: local
-        source_path: 'global'
+    #      '/.global':
+    #        source: local
+    #        source_path: 'global'
 
     # Alternate copies of the application to run as background processes.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#workers
@@ -86,7 +86,7 @@ applications:
         # General instructions given on the site are at https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html
         #
         # I am going to explicitly reference pip3 and python3 below, though it probably won't make a difference
-        pip3 install wheel packaging ninja setuptools>=49.4.0 numpy
+        pip install wheel packaging ninja setuptools>=49.4.0 numpy
         
       deploy: |  
         # Set environment variable
